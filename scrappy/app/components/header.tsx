@@ -18,14 +18,9 @@ const Header = () => {
                     </h3>
                 </Link>
             </div>
-            <div className="flex gap-6">
-                <Link href='/login' className="p-1">
-                    <h3 className="font-bold cursor-pointer hover:text-slate-500">Login</h3>
-                </Link>
-                <Link href='/signup' className="p-1">
-                    <h3 className="font-bold cursor-pointer hover:text-slate-500">Signup</h3>
-                </Link>
-            </div>
+            <Link href='/login' className="p-1">
+                <h3 className="font-bold cursor-pointer hover:text-slate-500">Sign in with Google</h3>
+            </Link>
         </div>
     </div>
   )
