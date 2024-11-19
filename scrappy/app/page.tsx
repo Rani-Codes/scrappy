@@ -19,7 +19,7 @@ export default function Home() {
           </h2>
           <Carousel items={cards} />
           <div className="w-full flex justify-center">
-            <Link href='/login'>
+            <Link href='/auth/login'>
             <button className="bg-button p-4 text-lg font-semibold text-white_tone rounded hover:shadow-2xl">
               Join Scrappy Today!
             </button>
