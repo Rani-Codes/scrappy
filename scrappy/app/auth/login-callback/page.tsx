@@ -10,10 +10,33 @@ const LoginCallback = () => {
 
     useEffect(() => {
         const handleCallback = async () => {
-            const { data: session } = await supabase.auth.getSession();
-            if (session) {
+            try {
+                const { data, error } = await supabase.auth.getSession();
+                if (error || !data.session) {
+                    router.push("/auth/login");
+                    return;
+                }
+
+                const { id, email, user_metadata } = data.session.user;
+                if (!email || !user_metadata?.full_name) {
+                    router.push("/auth/login");
+                    return;
+                }
+
+                const { error: dbError } = await supabase.from("users").upsert({
+                    id,
+                    email,
+                    username: user_metadata.full_name,
+                    pfp: user_metadata.picture || null,
+                });
+
+                if (dbError) {
+                    router.push("/auth/login");
+                    return;
+                }
+
                 router.push("/posts");
-            } else {
+            } catch {
                 router.push("/auth/login");
             }
         };

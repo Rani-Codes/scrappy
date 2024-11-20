@@ -2,17 +2,6 @@
 
 import { redirect } from "next/navigation";
 import { createClient } from "@/app/utils/supabase/server";
-
-export async function signout() {
-    const supabase = await createClient();
-    const { error } = await supabase.auth.signOut();
-  if (error) {
-    console.log(error);
-    redirect("/error");
-  }
-
-  redirect("/auth/logout");
-}
   
 
 export async function signInWithGoogle() {
@@ -33,4 +22,16 @@ export async function signInWithGoogle() {
   }
 
   redirect(data.url);
+}
+
+
+export async function signout() {
+    const supabase = await createClient();
+    const { error } = await supabase.auth.signOut();
+  if (error) {
+    console.log(error);
+    redirect("/error");
+  }
+
+  redirect("/auth/logout");
 }
