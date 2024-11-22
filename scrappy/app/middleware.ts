@@ -4,6 +4,7 @@ import { updateSession } from '@/app/utils/supabase/middleware'
 export async function middleware(request: NextRequest) {
   return await updateSession(request)
 }
+// hi 
 
 export const config = {
   matcher: [
