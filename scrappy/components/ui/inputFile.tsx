@@ -10,7 +10,7 @@ export const InputFile = forwardRef<HTMLInputElement, { onChange: (e: React.Chan
         <Input
           id="picture"
           type="file"
-          accept="image/*" // Allow all images and PDFs
+          accept="image/*" // Allow all images
           onChange={onChange}
           ref={ref} // Attach the ref for external control
         />

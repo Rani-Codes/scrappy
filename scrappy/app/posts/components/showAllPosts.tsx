@@ -3,10 +3,12 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { createClient } from '@/app/utils/supabase/client';
 import { Post } from '@/app/posts/types/post';
+import UpdatePost from './updatePost'; // Import the UpdatePost component
 
 const ScrapbookPosts = () => {
   const supabase = createClient();
   const [posts, setPosts] = useState<Post[]>([]);
+  const [currentUser, setCurrentUser] = useState<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const fetchPosts = useCallback(async () => {
@@ -36,6 +38,16 @@ const ScrapbookPosts = () => {
       supabase.removeChannel(channel);
     };
   }, [supabase, fetchPosts]);
+
+  useEffect(() => {
+    // Fetch current user to display edit button only for user's posts
+    const fetchCurrentUser = async () => {
+      const { data, error } = await supabase.auth.getUser();
+      setCurrentUser(data?.user || null); // Store the user object from the 'data' field
+    };
+
+    fetchCurrentUser();
+  }, [supabase]);
 
   useEffect(() => {
     // Observe changes to the container's size to trigger re-layout
@@ -122,10 +134,19 @@ const ScrapbookPosts = () => {
                   timeZone: 'UTC',
                 })}
               </p>
-
               <p>
                 <strong>Created by:</strong> {post.users.username}
               </p>
+
+              {/* Show the Edit Post button only if the current user is the creator of the post */}
+              {currentUser && currentUser.id === post.user_id && (
+                <UpdatePost
+                  postId={post.id}
+                  currentTitle={post.title}
+                  currentDescription={post.description}
+                  fetchPosts={fetchPosts}
+                />
+              )}
             </div>
           </div>
         ))}
