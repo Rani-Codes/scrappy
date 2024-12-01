@@ -139,7 +139,7 @@ const ScrapbookPosts = () => {
                 <strong>Created by:</strong> {post.users.username}
               </p>
 
-              {/* Show the Edit Post button only if the current user is the creator of the post */}
+              {/* Show the Edit and Delete Post buttons only if the current user is the creator of the post */}
               {currentUser && currentUser.id === post.user_id && (
                 <div className='flex justify-between items-center'>
                 <UpdatePost
@@ -148,7 +148,7 @@ const ScrapbookPosts = () => {
                   currentDescription={post.description}
                   fetchPosts={fetchPosts}
                 />
-                <DeletePost postId={post.id} fetchPosts={fetchPosts} /> {/* Add DeletePost component */}
+                <DeletePost postId={post.id} fetchPosts={fetchPosts} />
               </div>
               )}
             </div>
