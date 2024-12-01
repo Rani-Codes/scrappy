@@ -7,7 +7,7 @@ const Header = () => {
         <div className="sm:flex justify-between font-semibold text-xl mx-4 items-center">
             <div className="flex justify-center items-center">
                 <Image
-                    src="/scrappy_logo.png"
+                    src="/logo.png"
                     width={100}
                     height={100}
                     alt="Picture of the mascot, scrappy"
@@ -17,7 +17,7 @@ const Header = () => {
                 </h3>
             </div>
             <Link href='/auth/login' className="p-1">
-                <h3 className="font-bold cursor-pointer hover:text-slate-300 hidden sm:block">Sign in with Google</h3>
+                <h3 className="font-bold cursor-pointer hover:text-button hidden sm:block">Sign in with Google</h3>
             </Link>
         </div>
     </div>
