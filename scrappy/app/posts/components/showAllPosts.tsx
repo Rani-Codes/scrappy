@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { createClient } from '@/app/utils/supabase/client';
 import { Post } from '@/app/posts/types/post';
 import UpdatePost from './updatePost'; // Import the UpdatePost component
+import DeletePost from './deletePost';
 
 const ScrapbookPosts = () => {
   const supabase = createClient();
@@ -140,12 +141,15 @@ const ScrapbookPosts = () => {
 
               {/* Show the Edit Post button only if the current user is the creator of the post */}
               {currentUser && currentUser.id === post.user_id && (
+                <div className='flex justify-between items-center'>
                 <UpdatePost
                   postId={post.id}
                   currentTitle={post.title}
                   currentDescription={post.description}
                   fetchPosts={fetchPosts}
                 />
+                <DeletePost postId={post.id} fetchPosts={fetchPosts} /> {/* Add DeletePost component */}
+              </div>
               )}
             </div>
           </div>
