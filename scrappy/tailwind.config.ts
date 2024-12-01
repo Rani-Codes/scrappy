@@ -10,11 +10,15 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-  			background: 'var(--background)',
-  			foreground: 'var(--foreground)',
-  			main: '#094067',
-  			button: '#3da9fc',
-  			white_tone: '#fffffe'
+  			background: '#55423d',
+			posts_bg: '#271c19',
+  			main: '#fffffe',
+  			button: '#ffc0ad',
+			button_text: '#271c19',
+			card_background: '#55423d',
+			button2: '#9656a1',
+			button2_hover: '#784480',
+
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

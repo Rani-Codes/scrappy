@@ -44,7 +44,7 @@ const LoginCallback = () => {
         handleCallback();
     }, [router, supabase]);
 
-    return <p>Processing...</p>;
+    return <p className="text-main text-lg">Processing...</p>;
 };
 
 export default LoginCallback;

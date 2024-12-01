@@ -13,13 +13,13 @@ const Header = () => {
                     alt="Picture of the mascot, scrappy"
                     />
                 <Link href='/' className="p-1">
-                    <h3 className="font-bold text-3xl cursor-pointer hover:text-slate-500">
+                    <h3 className="font-bold text-3xl cursor-pointer hover:text-slate-300">
                         Scrappy <span className="text-base">@UCDavis</span>
                     </h3>
                 </Link>
             </div>
             <Link href='/auth/login' className="p-1">
-                <h3 className="font-bold cursor-pointer hover:text-slate-500">Sign in with Google</h3>
+                <h3 className="font-bold cursor-pointer hover:text-slate-300">Sign in with Google</h3>
             </Link>
         </div>
     </div>

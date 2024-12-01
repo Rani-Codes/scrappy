@@ -15,10 +15,10 @@ const page = async () => {
 
 
   return (
-    <div>
+    <div className="bg-posts_bg">
         <GreetUser />
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-3xl font-bold my-4 text-center">Scrapbook Posts</h1>
+          <h1 className="text-3xl font-bold my-4 text-center text-main">Scrapbook Posts</h1>
           <CreatePost/>
         </div>
         <ShowAllPosts/>

@@ -13,6 +13,7 @@ export const InputFile = forwardRef<HTMLInputElement, { onChange: (e: React.Chan
           accept="image/*" // Allow all images
           onChange={onChange}
           ref={ref} // Attach the ref for external control
+          className="text-black"
         />
       </div>
     );

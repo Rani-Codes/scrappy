@@ -55,13 +55,13 @@ const UpdatePost = ({ postId, currentTitle, currentDescription, fetchPosts }: Up
 
   return (
     <Dialog>
-      <DialogTrigger className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">
+      <DialogTrigger className="bg-yellow-500 py-2 px-4 rounded font-semibold hover:bg-yellow-600">
         Edit Post
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="bg-background text-main border-0 font-semibold">
         <DialogHeader>
-          <DialogTitle>Update Post</DialogTitle>
-          <DialogDescription>Modify the post details below and save the changes.</DialogDescription>
+          <DialogTitle className="text-xl">Update Post</DialogTitle>
+          <DialogDescription className="text-button2">Modify the post details below and save the changes.</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
@@ -70,7 +70,7 @@ const UpdatePost = ({ postId, currentTitle, currentDescription, fetchPosts }: Up
             placeholder="Post Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="border rounded p-2 w-full"
+            className="border rounded p-2 w-full text-black"
             required
           />
           <textarea
@@ -78,9 +78,9 @@ const UpdatePost = ({ postId, currentTitle, currentDescription, fetchPosts }: Up
             placeholder="Description (optional)"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="border rounded p-2 w-full"
+            className="border rounded p-2 w-full text-black"
           ></textarea>
-          <button type="submit" className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">
+          <button type="submit" className="bg-button2_hover text-main py-2 px-4 rounded">
             Save Changes
           </button>
         </form>

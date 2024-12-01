@@ -58,13 +58,13 @@ const CreatePost = () => {
   return (
     <div>
       <Dialog>
-        <DialogTrigger className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+        <DialogTrigger className="bg-button2 text-white py-2 px-4 rounded hover:bg-[#784480] font-bold">
           Create a Post
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="bg-background text-main border-0 font-semibold">
           <DialogHeader>
-            <DialogTitle>Create a New Post</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-xl">Create a New Post</DialogTitle>
+            <DialogDescription className="text-button2">
               Fill in the details below to create a new post.
             </DialogDescription>
           </DialogHeader>
@@ -75,7 +75,7 @@ const CreatePost = () => {
               placeholder="Post Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="border rounded p-2 w-full"
+              className="border rounded p-2 w-full text-black"
               required
             />
             <textarea
@@ -83,12 +83,12 @@ const CreatePost = () => {
               placeholder="Description (optional)"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="border rounded p-2 w-full"
+              className="border rounded p-2 w-full text-black"
             ></textarea>
             <InputFile onChange={handleFileChange} />
             <button
               type="submit"
-              className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              className="bg-button2 text-white py-2 px-4 rounded hover:bg-[#784480] font-bold"
             >
               Create Post
             </button>

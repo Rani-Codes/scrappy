@@ -25,9 +25,11 @@ const GreetUser = () => {
   if (user) {
     const displayName = user.user_metadata?.full_name || user.user_metadata?.name || "User";
     return (
-      <p className="left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+      <div className="bg-background text-main font-semibold w-full flex justify-between p-4 text-lg">
+        <p>
         Hello&nbsp;
-        <code className="font-mono font-bold">{displayName}!</code>
+        <code className="font-mono font-bold underline">{displayName}</code>
+        </p>
         <button 
         type="button"
         onClick={() => {
@@ -35,7 +37,8 @@ const GreetUser = () => {
         }}
         >
         Sign out now
-    </button>      </p>
+    </button> 
+    </div>
     );
   }
 };

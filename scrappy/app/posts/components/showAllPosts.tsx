@@ -116,10 +116,10 @@ const ScrapbookPosts = () => {
         {posts.map((post) => (
           <div
             key={post.id}
-            className="p-4 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white"
+            className="p-4 rounded shadow-sm hover:shadow-md transition-shadow bg-card_background text-main"
           >
             <h2 className="text-lg font-semibold mb-2">{post.title}</h2>
-            <p className="text-gray-600 mb-4">{post.description}</p>
+            <p className="text-main mb-4">{post.description}</p>
             {post.image_url && (
               <img
                 src={post.image_url}
@@ -128,7 +128,7 @@ const ScrapbookPosts = () => {
                 style={{ maxHeight: '300px' }}
               />
             )}
-            <div className="mt-4 text-sm text-gray-500">
+            <div className="mt-4 text-sm text-main">
               <p>
                 <strong>Created on:</strong>{' '}
                 {new Date(post.created_on).toLocaleDateString('en-US', {

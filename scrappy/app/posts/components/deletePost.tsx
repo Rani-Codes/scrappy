@@ -36,23 +36,22 @@ const DeletePost = ({ postId, fetchPosts }: DeletePostProps) => {
     <div className="mt-2">
       {/* Trigger to open the delete confirmation dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogTrigger className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
+        <DialogTrigger className="bg-red-500 text-white py-2 px-4 font-semibold rounded hover:bg-red-600">
           Delete Post
         </DialogTrigger>
 
-        <DialogContent>
+        <DialogContent className="bg-background text-main border-0 font-semibold">
           <DialogHeader>
-            <DialogTitle>Confirm Delete</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-xl text-main">Confirm Delete</DialogTitle>
+            <DialogDescription className="text-main">
               Are you sure you want to delete this post? This action cannot be undone.
             </DialogDescription>
           </DialogHeader>
 
-          {/* Delete Confirmation Actions */}
           <div className="mt-4 flex justify-end space-x-4">
             <button
               onClick={() => setIsDialogOpen(false)}
-              className="bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400"
+              className="bg-main text-gray-700 py-2 px-4 rounded hover:bg-gray-100"
             >
               Cancel
             </button>
